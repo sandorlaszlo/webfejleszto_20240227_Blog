@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
-            // $table->foreignId('category_id')->constrained();
-            $table->foreignId('category_id')->references('id')->on('categories');
+        Schema::create('flights', function (Blueprint $table) {
+            $table->id();
+            $table->string('from');
+            $table->string('to');
+            $table->time('departure_time');
+            $table->time('arrival_time');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropForeign(['category_id']);
-        });
+        Schema::dropIfExists('flights');
     }
 };
