@@ -37,6 +37,11 @@ Route::get('/categories', function () {
 
 Route::get('/categories/{id}', function ($id) {
     $category = Category::find($id);
+    // dd($category);
+    if ($category == null) {
+        return abort(404);
+    }
     $posts = $category->posts;
+    // dd($posts);
     return view('posts', ['posts' => $posts]);
 });

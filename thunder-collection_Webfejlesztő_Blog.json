@@ -1,0 +1,164 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Webfejlesztő_Blog",
+    "dateExported": "2024-03-12T16:48:35.367Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ed247c65-f82f-46c8-8954-080d2f63983b",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "",
+            "name": "Get one",
+            "url": "http://127.0.0.1:8000/api/posts/104",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-12T15:32:38.997Z",
+            "modified": "2024-03-12T16:46:19.481Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "1c498b3d-0034-4e15-a01f-9fee0aedeb30",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://127.0.0.1:8000/api/posts/104",
+            "method": "PUT",
+            "sortNum": 11250,
+            "created": "2024-03-12T16:26:56.375Z",
+            "modified": "2024-03-12T16:47:30.695Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\" : \"Ez itt a cím\",\n  \"body\" : \"Ez itt a post teljes szövege.\",\n  \"lead\" : \"Ez itt az ÚJ bevezető\",\n\n  \"published_at\" : \"2024-03-12\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "cb55b6b0-ab19-4796-9b05-5c35cda4faff",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://127.0.0.1:8000/api/posts/102",
+            "method": "DELETE",
+            "sortNum": 12500,
+            "created": "2024-03-12T16:20:36.825Z",
+            "modified": "2024-03-12T16:25:30.818Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "41d1d731-8b79-4cbc-be19-9d931dfb9f71",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "",
+            "name": "Create",
+            "url": "http://127.0.0.1:8000/api/posts",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2024-03-12T15:38:19.574Z",
+            "modified": "2024-03-12T16:42:20.792Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\" : \"Ez itt a cím\",\n  \"body\" : \"Ez itt a post teljes szövege.\",\n  \"lead\" : \"Ez itt a bevezető\",\n  \"category_id\" : 1,\n  \"published_at\" : \"2024-03-12\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "97058c24-6fb9-4031-a3c8-e0ae8cae47d6",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "",
+            "name": "Get all",
+            "url": "http://127.0.0.1:8000/api/posts",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-12T15:37:09.254Z",
+            "modified": "2024-03-12T15:37:32.548Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}
