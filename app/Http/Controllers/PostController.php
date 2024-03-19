@@ -39,16 +39,17 @@ class PostController extends Controller
             'category_id' => 'required|exists:categories,id'
         ]);
 
-        $post = new Post();
+        // $post = new Post();
 
-        //TODO: create() method
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->lead = $request->lead;
-        $post->category_id = $request->category_id;
-        $post->published_at = $request->published_at;
+        // $post->title = $request->title;
+        // $post->body = $request->body;
+        // $post->lead = $request->lead;
+        // $post->category_id = $request->category_id;
+        // $post->published_at = $request->published_at;
 
-        $post->save();
+        // $post->save();
+
+        $post = Post::create($request->all());
 
         return $post;
     }
@@ -74,11 +75,11 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required|max:100',
-            'body' => 'required',
-            'lead' => 'required',
+            'title' => 'string|max:100',
+            'body' => 'string',
+            'lead' => 'string',
             'published_at' => 'date',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'integer|exists:categories,id',
         ]);
 
         $post = Post::find($id);
@@ -86,14 +87,15 @@ class PostController extends Controller
             return response()->json(["message" => "No post found with the given id."], 404);
         }
 
-        //TODO: update() method
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->lead = $request->lead;
-        $post->category_id = $request->category_id;
-        $post->published_at = $request->published_at;
+        // $post->title = $request->title;
+        // $post->body = $request->body;
+        // $post->lead = $request->lead;
+        // $post->category_id = $request->category_id;
+        // $post->published_at = $request->published_at;
 
-        $post->save();
+        // $post->save();
+
+        $post->update($request->all());
 
         return $post;
     }

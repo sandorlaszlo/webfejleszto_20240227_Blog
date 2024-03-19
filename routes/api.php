@@ -32,6 +32,7 @@ Route::get('posts/{id}', [PostController::class,'show']);
 Route::post('posts', [PostController::class,'store']);
 Route::delete('posts/{id}', [PostController::class, 'destroy']);
 Route::put('posts/{id}', [PostController::class, 'update']);
+Route::patch('posts/{id}', [PostController::class, 'update']);
 
 Route::get('categories', [CategoryController::class, 'index']);
 Route::get('categories/{id}', [CategoryController::class, 'show']);

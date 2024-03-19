@@ -1,20 +1,35 @@
 {
     "client": "Thunder Client",
     "collectionName": "Webfejlesztő_Blog",
-    "dateExported": "2024-03-12T16:48:35.367Z",
+    "dateExported": "2024-03-19T16:23:07.526Z",
     "version": "1.1",
-    "folders": [],
+    "folders": [
+        {
+            "_id": "1af10250-ae94-49bb-9ede-c09e925d2e57",
+            "name": "Posts",
+            "containerId": "",
+            "created": "2024-03-19T14:54:48.712Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "8dd7d0ad-a928-47ef-b7cd-dcde6713c6a5",
+            "name": "Categories",
+            "containerId": "",
+            "created": "2024-03-19T14:55:17.967Z",
+            "sortNum": 20000
+        }
+    ],
     "requests": [
         {
             "_id": "ed247c65-f82f-46c8-8954-080d2f63983b",
             "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
-            "containerId": "",
+            "containerId": "1af10250-ae94-49bb-9ede-c09e925d2e57",
             "name": "Get one",
-            "url": "http://127.0.0.1:8000/api/posts/104",
+            "url": "http://127.0.0.1:8000/api/posts/1",
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-03-12T15:32:38.997Z",
-            "modified": "2024-03-12T16:46:19.481Z",
+            "modified": "2024-03-19T14:40:29.713Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -37,13 +52,13 @@
         {
             "_id": "1c498b3d-0034-4e15-a01f-9fee0aedeb30",
             "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
-            "containerId": "",
+            "containerId": "1af10250-ae94-49bb-9ede-c09e925d2e57",
             "name": "Update",
-            "url": "http://127.0.0.1:8000/api/posts/104",
+            "url": "http://127.0.0.1:8000/api/posts/13",
             "method": "PUT",
-            "sortNum": 11250,
+            "sortNum": 20000,
             "created": "2024-03-12T16:26:56.375Z",
-            "modified": "2024-03-12T16:47:30.695Z",
+            "modified": "2024-03-19T16:21:58.020Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -62,20 +77,54 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"title\" : \"Ez itt a cím\",\n  \"body\" : \"Ez itt a post teljes szövege.\",\n  \"lead\" : \"Ez itt az ÚJ bevezető\",\n\n  \"published_at\" : \"2024-03-12\"\n}",
+                "raw": "{\n  \"title\" : \"Ez itt a cím\",\n  \"body\" : \"Ez itt a post teljes szövege.\",\n  \"lead\" : \"Ez itt az ÚJ bevezető\",\n  \"category_id\" : 1,\n  \"published_at\" : \"2024-03-12\"\n}",
                 "form": []
             },
-            "reqType": "get",
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "2008c176-c186-4acf-89f8-fef32d056103",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "1af10250-ae94-49bb-9ede-c09e925d2e57",
+            "name": "Update patch",
+            "url": "http://127.0.0.1:8000/api/posts/20",
+            "method": "PATCH",
+            "sortNum": 25000,
+            "created": "2024-03-19T16:22:02.974Z",
+            "modified": "2024-03-19T16:22:39.972Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"category_id\" : 2\n}",
+                "form": []
+            },
+            "reqType": "put",
             "tests": []
         },
         {
             "_id": "cb55b6b0-ab19-4796-9b05-5c35cda4faff",
             "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
-            "containerId": "",
+            "containerId": "1af10250-ae94-49bb-9ede-c09e925d2e57",
             "name": "Delete",
             "url": "http://127.0.0.1:8000/api/posts/102",
             "method": "DELETE",
-            "sortNum": 12500,
+            "sortNum": 30000,
             "created": "2024-03-12T16:20:36.825Z",
             "modified": "2024-03-12T16:25:30.818Z",
             "headers": [
@@ -98,15 +147,43 @@
             "tests": []
         },
         {
+            "_id": "4d6ebcb6-2e21-4852-a033-51235aedd2a4",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "8dd7d0ad-a928-47ef-b7cd-dcde6713c6a5",
+            "name": "Get all",
+            "url": "http://127.0.0.1:8000/api/categories",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-19T14:55:39.662Z",
+            "modified": "2024-03-19T15:01:30.742Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
             "_id": "41d1d731-8b79-4cbc-be19-9d931dfb9f71",
             "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
-            "containerId": "",
+            "containerId": "1af10250-ae94-49bb-9ede-c09e925d2e57",
             "name": "Create",
             "url": "http://127.0.0.1:8000/api/posts",
             "method": "POST",
-            "sortNum": 15000,
+            "sortNum": 40000,
             "created": "2024-03-12T15:38:19.574Z",
-            "modified": "2024-03-12T16:42:20.792Z",
+            "modified": "2024-03-19T16:09:03.735Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -125,20 +202,78 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"title\" : \"Ez itt a cím\",\n  \"body\" : \"Ez itt a post teljes szövege.\",\n  \"lead\" : \"Ez itt a bevezető\",\n  \"category_id\" : 1,\n  \"published_at\" : \"2024-03-12\"\n}",
+                "raw": "{\n  \"title\" : \"Ez itt egy új cím\",\n  \"body\" : \"Ez itt a post teljes szövege.\",\n  \"lead\" : \"Ez itt a bevezető\",\n  \"category_id\" : 1,\n  \"published_at\" : \"2024-03-19\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
+            "_id": "97d210a7-739f-44b8-9845-b900b7d24967",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "8dd7d0ad-a928-47ef-b7cd-dcde6713c6a5",
+            "name": "Get one",
+            "url": "http://127.0.0.1:8000/api/categories/303",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-19T15:01:43.884Z",
+            "modified": "2024-03-19T15:04:21.243Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "ba9a895c-dbca-4816-93eb-815bb7a88bc6",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "8dd7d0ad-a928-47ef-b7cd-dcde6713c6a5",
+            "name": "Delete",
+            "url": "http://127.0.0.1:8000/api/categories/6",
+            "method": "DELETE",
+            "sortNum": 45000,
+            "created": "2024-03-19T15:48:54.944Z",
+            "modified": "2024-03-19T15:50:48.656Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
             "_id": "97058c24-6fb9-4031-a3c8-e0ae8cae47d6",
             "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
-            "containerId": "",
+            "containerId": "1af10250-ae94-49bb-9ede-c09e925d2e57",
             "name": "Get all",
             "url": "http://127.0.0.1:8000/api/posts",
             "method": "GET",
-            "sortNum": 20000,
+            "sortNum": 50000,
             "created": "2024-03-12T15:37:09.254Z",
             "modified": "2024-03-12T15:37:32.548Z",
             "headers": [
@@ -158,6 +293,74 @@
             ],
             "params": [],
             "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "77f40a63-dd9e-4b98-97da-cf6a4acf2370",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "8dd7d0ad-a928-47ef-b7cd-dcde6713c6a5",
+            "name": "Create",
+            "url": "http://127.0.0.1:8000/api/categories",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-03-19T15:10:48.176Z",
+            "modified": "2024-03-19T15:51:58.719Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"másik\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "82618bc2-6b39-4e40-98e1-3d87196fd01b",
+            "colId": "15458067-e204-4c6e-a0c8-01641f7a4ff1",
+            "containerId": "8dd7d0ad-a928-47ef-b7cd-dcde6713c6a5",
+            "name": "Update",
+            "url": "http://127.0.0.1:8000/api/categories/2",
+            "method": "PATCH",
+            "sortNum": 60000,
+            "created": "2024-03-19T15:57:16.209Z",
+            "modified": "2024-03-19T15:59:03.119Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"bármi más...\"\n}",
+                "form": []
+            },
+            "reqType": "post",
             "tests": []
         }
     ]
