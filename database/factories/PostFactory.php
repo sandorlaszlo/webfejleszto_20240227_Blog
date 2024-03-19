@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,13 +17,14 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $categories = Category::all();
         return [
             'title' => $this->faker->sentence(3),
             'body' => $this->faker->paragraph(30),
             // 'published_at' => $this->faker->date(),
             'published_at' => $this->faker->dateTimeBetween('-1 week', 'now'),
             'lead' => $this->faker->paragraph(2),
-            'category_id' => $this->faker->numberBetween(1, 10),
+            'category_id' => $categories->random()->id
         ];
     }
 }

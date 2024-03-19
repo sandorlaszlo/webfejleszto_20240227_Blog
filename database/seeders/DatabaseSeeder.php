@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         Flight::factory(10)->create();
 
-        Category::factory(10)->create();
+        Category::factory(3)->create();
         Post::factory(100)->create();
     }
 }
