@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Flight;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         Flight::factory(10)->create();
 
         Category::factory(3)->create();
+        User::factory(10)->create();
         Post::factory(100)->create();
     }
 }

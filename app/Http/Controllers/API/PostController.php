@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::with('author', 'category')->get();
         return $posts;
     }
 
@@ -65,6 +67,7 @@ class PostController extends Controller
         // }
 
         $post = Post::findOrFail($id);
+        $post->load('author', 'category');
 
         return $post;
     }

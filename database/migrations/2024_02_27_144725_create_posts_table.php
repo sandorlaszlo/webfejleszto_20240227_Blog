@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('category_id')->constrained();
             $table->string('title', 100);
             $table->text('body');
+            $table->text('lead');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

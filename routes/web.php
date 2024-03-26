@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\Category;
-use App\Models\Post;
+use App\Http\Controllers\WEB\AuthorController;
+use App\Http\Controllers\WEB\CategoryController;
+use App\Http\Controllers\WEB\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,32 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/posts');
 });
 
-Route::get('/posts', function () {
-    $posts = Post::all();
-    return view('posts', ['posts' => $posts]);
-});
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{id}', [PostController::class,'show']);
 
-Route::get('/posts/{id}', function ($id) {
-    $post = Post::find($id);
-    // dd($post);
-    return view('post', ['post' => $post]);
-});
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories/{id}', [CategoryController::class,'show']);
 
-Route::get('/categories', function () {
-    $categories = Category::all();
-    return view('categories', ['categories' => $categories]);
-});
-
-Route::get('/categories/{id}', function ($id) {
-    $category = Category::find($id);
-    // dd($category);
-    if ($category == null) {
-        return abort(404);
-    }
-    $posts = $category->posts;
-    // dd($posts);
-    return view('posts', ['posts' => $posts]);
-});
+Route::resource('authors', AuthorController::class)->only(['index','show']);
