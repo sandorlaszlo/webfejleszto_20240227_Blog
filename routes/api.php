@@ -27,16 +27,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //U - update - update
 //D - delete - destroy
 
-Route::get('posts', [PostController::class, 'index']);
-Route::get('posts/{id}', [PostController::class,'show']);
-Route::post('posts', [PostController::class,'store']);
-Route::delete('posts/{id}', [PostController::class, 'destroy']);
-Route::put('posts/{id}', [PostController::class, 'update']);
-Route::patch('posts/{id}', [PostController::class, 'update']);
+// Route::get('posts', [PostController::class, 'index']);
+// Route::get('posts/{id}', [PostController::class,'show']);
+// Route::post('posts', [PostController::class,'store']);
+// Route::delete('posts/{id}', [PostController::class, 'destroy']);
+// Route::put('posts/{id}', [PostController::class, 'update']);
+// Route::patch('posts/{id}', [PostController::class, 'update']);
 
-Route::get('categories', [CategoryController::class, 'index']);
-Route::get('categories/{id}', [CategoryController::class, 'show']);
-Route::post('categories', [CategoryController::class,'store']);
-Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
-Route::put('categories/{id}', [CategoryController::class, 'update']);
-Route::patch('categories/{id}', [CategoryController::class, 'update']);
+//Route::resource('posts', PostController::class);
+Route::apiResource('posts', PostController::class);
+
+// Route::get('categories', [CategoryController::class, 'index']);
+// Route::get('categories/{id}', [CategoryController::class, 'show']);
+// Route::post('categories', [CategoryController::class,'store']);
+// Route::delete('categories/{id}', [CategoryController::class, 'destroy']);
+// Route::put('categories/{id}', [CategoryController::class, 'update']);
+// Route::patch('categories/{id}', [CategoryController::class, 'update']);
+
+Route::apiResource('categories', CategoryController::class);
+// Route::apiResource('categories', CategoryController::class)->only(['index','show']);
+// Route::apiResource('categories', CategoryController::class)->except(['update']);
